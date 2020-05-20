@@ -1,0 +1,61 @@
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner (System.in);
+		System.out.println("So, what's your name, lone traveler?");
+		String name = sc.nextLine();
+		int HP=0;
+		int HP1=0;
+		int Mana=0;
+		int Mana1=0;
+		int Armor=0;
+		int Armor1=0;
+		int Items=0;
+		int Trophies=0;
+		int Achievements=0;
+		System.out.println("What is the size of your character?(in centimeters)");
+		int Height = sc.nextInt();
+		System.out.println("What is the size of your character's feet?(in EU size)");
+		int Foot = sc.nextInt();
+		System.out.println("Are you a healer?");
+		boolean isHealer=sc.nextBoolean();
+		if (isHealer=true) {
+			for (int i=0;i<HP;i++) {
+				HP1++;
+				System.out.println("You've healed yourself by one");
+			}
+			}
+		System.out.println("Are you a knight?");
+		boolean isKnight=sc.nextBoolean();
+		if (isKnight=true) {
+			for (int y=0;y<Armor;y++) {
+				Armor1++;
+				System.out.println("You gained one additional armor");
+			}
+		}
+		boolean isMage=sc.nextBoolean();
+		if (isMage=true) {
+			for (int k=0;k<Mana;k++) {
+				Mana1++;
+				System.out.println("You gained one additional mana");
+			}
+		}
+		System.out.println("What will be the world called?");
+		String world = sc.nextLine();
+		System.out.println("Do you want to play singleplayer or multiplayer?");
+		String mode = sc.nextLine();
+		if (Height>180) {
+			System.out.println("Your character is big");
+		}
+		else {
+			System.out.println("Your character is small");
+		}
+		if (Mana1==Mana) {
+			System.out.println("That's alot of mana");
+		}
+		else {
+			System.out.println("Your mana is lower than the maximum amount");
+		}
+	}
+}

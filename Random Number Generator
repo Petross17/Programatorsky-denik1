@@ -1,0 +1,85 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		System.out.println
+		("Heyy, you just started a program,"
+				+ " which you will give two numbers to,"
+				+ " maximum a minimum. ");
+		System.out.println("It will generate a random number from the range,"
+				+ " and you're supposed to guess the number, within the tolerance you set :)");
+		Scanner sc = new Scanner (System.in);
+		Random rand = new Random ();
+		Integer number = 0;
+		Integer guess = 0;
+		Integer inaccuracy = 0;
+		Integer try1 = 0;
+		Integer try2 = 0;
+		System.out.println("First, write how many times "
+				+ "you want to go through the whole process of guessing again");
+		try1 = sc.nextInt();
+		System.out.println("Second, write how many times you can guess the number");
+		try2 = sc.nextInt();
+		for (int i=0;i<try1;i++) {
+			System.out.println("Write the lowest number, which you want to be the lowest border of the range");
+			Integer minimum = sc.nextInt();
+			System.out.println("Write the highest number, which you want it to be the highest border of the range");
+			Integer maximum = sc.nextInt();
+			while (minimum>=maximum) {
+				System.out.println("Minimum always has to be smaller than maximum. "
+						+ "Write another maximum, this time bigger than the minimum. "
+						+ "Reminder, the minimum you wrote is: "
+						+ minimum);
+				minimum = sc.nextInt();
+			}
+			System.out.println("Now, set the tolerance you want the program to have");
+			Integer tolerance = sc.nextInt();
+			Integer helper = maximum - minimum + 1;
+			number = rand.nextInt((maximum - minimum) + 1) + minimum;
+            for (int y=0;y<try2;y++) {
+            	System.out.println("Try to guess a number,"
+    					+ " which the program generated. "
+    					+ "With a tolerance of " +
+    					tolerance 
+    					+ " numbers.");
+    			guess = sc.nextInt();
+    			if (number>guess) {
+    				inaccuracy = number - guess;
+    				if ((number - tolerance)<=guess) {
+    					System.out.println("Nice, you were within the tolerance. "
+    							+ "You were " 
+    							+ inaccuracy + " numbers "
+    							+ "apart from the number, but still, well done");
+    				}
+    				if ((number - tolerance)>guess) {
+    					System.out.println("Unlucky, your number wasn't within the set range. "
+    							+ "You were " 
+    							+ inaccuracy + " apart from the number. "
+    						    + "Try it again, good luck :)");
+    				}
+    			}
+    			if (number<guess) {
+    				inaccuracy = guess - number;
+    				if ((number + tolerance)>=guess) {
+    					System.out.println("Nice, you were within the tolerance. "
+    							+ "You were " 
+    							+ inaccuracy + " numbers "
+    							+ "apart from the number, but still, well done");
+    				}
+    				if ((number + tolerance)<guess) {
+    					System.out.println("Unlucky, your number wasn't within the set range. "
+    							+ "You were " 
+    							+ inaccuracy + " apart from the number. "
+    						    + "Try it again, good luck :)");
+    				}
+    			}
+    			if (number==guess) {
+    					System.out.println("Nicely done. You actually managed to guess the right number");
+    					y = y + try2;
+    				}
+			}
+			}
+		}
+		}

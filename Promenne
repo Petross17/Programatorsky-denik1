@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Napiš hodnotu první proměnné");
+		int prvni=sc.nextInt();
+		System.out.println("Napiš hodnotu druhé proměnné");
+		int druhy=sc.nextInt();
+		if (prvni==druhy) {
+			System.out.println("Tyto dvě hodnoty se rovnají");
+		}
+	}
+}

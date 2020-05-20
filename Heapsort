@@ -1,0 +1,98 @@
+package petas.dela.heapsort.lmao;
+
+import java.util.Arrays;
+
+public class Halda {
+	public final int DEFAULT_BUFFER_SIZE=16;
+	int[] pole;
+	int virtualSize = 0;
+	public int getParent(int i) {
+		if (i%2==0) {
+			return (i-1)/2;
+		}
+		return i/2;
+	}
+	public int getLeftChild(int i) {
+		return 2*i+1;
+	}
+	public int getRightChild(int i) {
+		return 2*i+2;
+	}
+	public void insert (int v) {
+		if (virtualSize<=0) {
+			virtualSize=1;
+			pole = new int[DEFAULT_BUFFER_SIZE];
+			pole[0] = v;
+		}
+		else if (virtualSize<=pole.length) {
+			int[] pole2 = new int[pole.length*2];
+			for (int i=0;i<pole.length;i++) {
+				pole2[i] = pole[i];
+				pole = pole2;
+				}
+		}
+			pole[virtualSize]=v;
+				int currentIndex=virtualSize;
+				virtualSize++;
+				while(currentIndex!=0 && pole[currentIndex]<pole[getParent(currentIndex)]) {
+					int temp = pole[getParent(currentIndex)];
+					pole[getParent(currentIndex)]=pole[currentIndex];
+					pole[currentIndex]=temp;
+					currentIndex=getParent(currentIndex);
+				}
+	}
+	public int min() {
+		int minprvek=Integer.MAX_VALUE;
+		for (int i = 0;i<virtualSize;i++) {
+			if (pole[i] < minprvek) {
+				minprvek = pole[i];
+			}
+		}
+		return minprvek;
+	}
+	  public int ExtractMin() 
+	    {
+	        int min = min();
+	        pole[0] = 0;
+	        int virtualIndex = 0;
+	        while(virtualIndex+1 < virtualSize) {
+	            pole[virtualIndex] = pole[virtualIndex+1];
+	            virtualIndex += 1; 
+	        }
+	        pole[virtualIndex] = 0;
+	        virtualSize -= 1;
+	        return min;
+	    }
+	public String toString() {
+		int i=1;
+		int e=1;
+		while(i<virtualSize) {
+			i*=2;
+			e++;
+		}
+		String s = ""+e;
+		s+="[";
+		s+="]";
+		return s;
+		}
+}
+package petas.dela.heapsort.lmao;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Halda h = new Halda();
+		h.insert(5);
+		System.out.println(h);
+		h.insert(4);
+		System.out.println(h);
+		h.insert(3);
+		System.out.println(h);
+		h.insert(2);
+		System.out.println(h);
+		h.insert(1);
+		System.out.println(h);
+		h.insert(0);
+		System.out.println(h);
+	}
+}

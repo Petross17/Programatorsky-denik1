@@ -1,0 +1,59 @@
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Iterator;
+public class Array<T> implements Iterable<T> {
+	protected List<T> List = new ArrayList<>();
+	public Iterator<T> iterator() {
+		return new CustomIterator<T>(List);
+	}
+	public void add(T value) {
+		List.add(value);
+	}
+}
+import java.util.List;
+import java.util.Iterator;
+public class CustomIterator<E> implements Iterator<E> {
+	int h = 0;
+	int k = 0;
+	int u = 0;
+	int y = 0;
+	List<E> invisibleList;
+	public CustomIterator(List<E> invisibleList) {
+		this.invisibleList = invisibleList;
+	}
+	public boolean hasNext() {
+		if (invisibleList.size() >= y + 1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	public E next() {
+		E value = invisibleList.get(y);
+		y++;
+		return value;
+	}
+}
+public class IterationMain {
+	public static void main(String[] args) {
+		Array<String> tryList = new Array<>();
+		tryList.add("Pejsek");
+		tryList.add("Kočka");
+		tryList.add("lol");
+		tryList.add("Morče");
+		tryList.add("Bobr");
+		tryList.add("Kojot");
+		tryList.add("Hyena");
+		tryList.add("Doggo");
+		tryList.add("Pepa");
+		tryList.add("Dřevo");
+		tryList.add("Strom");
+		tryList.add("Les");
+		tryList.add("Honza");
+		tryList.add("Kulišák");
+		tryList.add("Uličník");
+		for(String string : tryList) {
+			System.out.println(string);
+		}
+	}
+}

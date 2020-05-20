@@ -1,0 +1,182 @@
+package petas.dela.heapsort.lmao;
+public class Zvire {
+	String jmeno;
+	String barva;
+	int footCount=0;
+	int eyeCount=0;
+	int numberCount=0;
+	int height=0;
+	int mana=0;
+	int pití=0;
+	int spokojenost=0;
+	int ochočenost=0;
+	public int getMana() {
+		return mana;
+	}
+	public void setMana(int mana) {
+		this.mana = mana;
+	}
+	public int getPití() {
+		return pití;
+	}
+	public void setPití(int pití) {
+		this.pití = pití;
+	}
+	public int getSpokojenost() {
+		return spokojenost;
+	}
+	public void setSpokojenost(int spokojenost) {
+		this.spokojenost = spokojenost;
+	}
+	public int getOchočenost() {
+		return ochočenost;
+	}
+	public void setOchočenost(int ochočenost) {
+		this.ochočenost = ochočenost;
+	}
+	public String getJmeno() {
+		return jmeno;
+	}
+	public void setJmeno(String jmeno) {
+		this.jmeno = jmeno;
+	}
+	public String getBarva() {
+		return barva;
+	}
+	public void setBarva(String barva) {
+		this.barva = barva;
+	}
+	public int getFootCount() {
+		return footCount;
+	}
+	public void setFootCount(int footCount) {
+		this.footCount = footCount;
+	}
+	public int getEyeCount() {
+		return eyeCount;
+	}
+	public void setEyeCount(int eyeCount) {
+		this.eyeCount = eyeCount;
+	}
+	public int getNumberCount() {
+		return numberCount;
+	}
+	public void setNumberCount(int numberCount) {
+		this.numberCount = numberCount;
+	}
+	public int getHeight() {
+		return height;
+	}
+	public void setHeight(int height) {
+		this.height = height;
+	}
+	public Zvire(String jmeno, String barva, int footCount, int eyeCount, int numberCount, int height, int mana,
+			int pití, int spokojenost, int ochočenost) {
+		super();
+		this.jmeno = jmeno;
+		this.barva = barva;
+		this.footCount = footCount;
+		this.eyeCount = eyeCount;
+		this.numberCount = numberCount;
+		this.height = height;
+		this.mana = mana;
+		this.pití = pití;
+		this.spokojenost = spokojenost;
+		this.ochočenost = ochočenost;
+	}
+	
+}
+package petas.dela.heapsort.lmao;
+import java.util.Scanner;
+public class ZvireMain {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Ted program vypise nejaka zvirata");
+		Zvire z1 = new Zvire("Karel", "Hnědá", 4, 2, 3, 100);
+		Zvire z2 = new Zvire("Ondra", "Hnědá", 4, 2, 3, 100);
+		Zvire z3 = new Zvire("Petr", "Hnědá", 4, 2, 3, 100);
+		Zvire z4 = new Zvire("Alík", "Hnědá", 4, 2, 3, 100);
+		Zvire z5 = new Zvire("Hamák", "Hnědá", 4, 2, 3, 100);
+		Pes p1 = new Pes("Hafoun", "Modrá", 4, 2, 3, 75);
+		Pes p2 = new Pes("Brahař", "Modrá", 4, 2, 3, 75);
+		Pes p3 = new Pes("Hipak", "Modrá", 4, 2, 3, 75);
+		Pes p4 = new Pes("Ípák", "Modrá", 4, 2, 3, 75);
+		Pes p5 = new Pes("Hrahol", "Modrá", 4, 2, 3, 75);
+		Kocka k1 = new Kocka("Tereza", "Červená", 4, 2, 3, 50);
+		Kocka k2 = new Kocka("Hovala", "Modrá", 4, 2, 3, 50);
+		Kocka k3 = new Kocka("Anetka", "Hnědá", 4, 2, 3, 50);
+		Kocka k4 = new Kocka("Eliška", "Černá", 4, 2, 3, 50);
+		Kocka k5 = new Kocka("Honoke", "Šedá", 4, 2, 3, 50);
+		System.out.println(z1);
+		System.out.println(z2);
+		System.out.println(z3);
+		System.out.println(z4);
+		System.out.println(z5);
+		System.out.println(p1);
+		System.out.println(p5);
+		System.out.println(p3);
+		System.out.println(p4);
+		System.out.println(p5);
+		System.out.println(k1);
+		System.out.println(k2);
+		System.out.println(k3);
+		System.out.println(k4);
+		System.out.println(k5);
+		System.out.println("Doufám, že se líbí");
+	}
+}
+package petas.dela.heapsort.lmao;
+public class Kocka extends Zvire {
+
+	public Kocka(String jmeno, String barva, int footCount, int eyeCount, int numberCount, int height, int mana,
+			int pití, int spokojenost, int ochočenost) {
+		super(jmeno, barva, footCount, eyeCount, numberCount, height, mana, pití, spokojenost, ochočenost);
+		this.jmeno=jmeno;
+		this.barva=barva;
+		this.footCount=footCount;
+		this.eyeCount=eyeCount;
+		this.numberCount=numberCount;
+		this.height=height;
+		this.mana=mana;
+		this.pití=pití;
+		this.spokojenost=spokojenost;
+		this.ochočenost=ochočenost;
+	}
+    package petas.dela.heapsort.lmao;
+public class Morče extends Zvire {
+
+	public Morče(String jmeno, String barva, int footCount, int eyeCount, int numberCount, int height, int mana,
+			int pití, int spokojenost, int ochočenost) {
+		super(jmeno, barva, footCount, eyeCount, numberCount, height, mana, pití, spokojenost, ochočenost);
+		this.jmeno=jmeno;
+		this.barva=barva;
+		this.footCount=footCount;
+		this.eyeCount=eyeCount;
+		this.numberCount=numberCount;
+		this.height=height;
+		this.mana=mana;
+		this.pití=pití;
+		this.spokojenost=spokojenost;
+		this.ochočenost=ochočenost;
+	}
+	
+}
+package petas.dela.heapsort.lmao;
+public class Pes extends Zvire {
+
+	public Pes(String jmeno, String barva, int footCount, int eyeCount, int numberCount, int height, int mana, int pití,
+			int spokojenost, int ochočenost) {
+		super(jmeno, barva, footCount, eyeCount, numberCount, height, mana, pití, spokojenost, ochočenost);
+		this.jmeno=jmeno;
+		this.barva=barva;
+		this.footCount=footCount;
+		this.eyeCount=eyeCount;
+		this.numberCount=numberCount;
+		this.height=height;
+		this.mana=mana;
+		this.pití=pití;
+		this.spokojenost=spokojenost;
+		this.ochočenost=ochočenost;
+	}
+	
+}

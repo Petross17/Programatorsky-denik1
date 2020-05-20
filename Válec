@@ -1,0 +1,75 @@
+package someting;
+
+public class Main2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s = new Scanner (System.in);
+        int polomer1 = s.nextInt();
+    Scanner c = new Scanner (System.in);
+        double scannervalce = c.nextDouble();
+    Scanner a = new Scanner (System.in);
+        double scanner1 = a.nextDouble();
+    Scanner b = new Scanner (System.in);
+        double scanner2 = b.nextDouble();
+        koule k1 = new koule ();
+        k1.setPolomer(5); 
+
+    koule k2 = new koule (polomer1);
+
+        if (k1.getPolomer() < k2.getPolomer()) {
+            System.out.println("Druhá koule je větší: "+ k2.getPolomer());
+
+        }
+        if (k1.getPolomer() > k2.getPolomer()) {
+            System.out.println("První koule je větší: "+ k1.getPolomer());
+        }
+        if (k1.getPolomer() == k2.getPolomer()) {
+            System.out.println("Obě koule mají stejné poloměry " + k1.getPolomer() +" = "+ k2.getPolomer() );
+
+        }
+        valec v1 = new valec();
+        v1.setPolomerPodstavy(2.1);
+        v1.setVyska(2);
+    if (v1.getPolomerPodstavy() > v1.getVyska()) {
+            System.out.println("Je více širší než vyšší");
+
+    }else {
+            System.out.println("Je více vyšší než širší");
+        }
+
+
+valec v2 = new valec(2.2);
+    if (v2.getPolomerPodstavy() > v2.getVyska()) {
+        System.out.println("Je více širší než vyšší");
+
+    }else {
+        System.out.println("Je více vyšší než širší");
+    }
+
+
+valec v3 = new valec(scannervalce);
+    if (v3.getPolomerPodstavy() > v3.getVyska()) {
+        System.out.println("Je více širší než vyšší");
+
+    }else {
+        System.out.println("Je více vyšší než širší");
+    }
+valec v4 = new valec(5.6,8);
+    if (v4.getPolomerPodstavy() > v4.getVyska()) {
+        System.out.println("Je více širší než vyšší");
+
+    }else {
+        System.out.println("Je více vyšší než širší");
+    }
+
+valec v5 = new valec(scanner1,scanner2);
+    if (v5.getPolomerPodstavy() > v5.getVyska()) {
+        System.out.println("Je více širší než vyšší");
+
+    }else {
+        System.out.println("Je více vyšší než širší");
+    }
+}
+
+	}

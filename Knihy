@@ -1,0 +1,40 @@
+
+public class Kniha {
+	String nazev;
+	String autor;
+	Kniha(String nazev,String autor){
+	this.nazev=n;
+    this.autor=a;
+}
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub	
+		Kniha Kniha1 = new Kniha ("Bílá nemoc", "Čapek");
+		Kniha Kniha2=new Kniha ("RUR", "Čapek");
+		Kniha Kniha3=new Kniha ("Stařec a moře", "Hemingway");
+		Kniha Kniha4 = new Kniha ("Bylo nás pět", "Autor");
+		Kniha Kniha5=new Kniha ("Farma zvířat", "Autor");
+		Kniha Kniha6=new Kniha ("Kniha", "Autor");
+		Kniha Kniha7 = new Kniha ("Kniha", "Autor");
+		Kniha Kniha8=new Kniha ("Kniha", "Autor");
+		Kniha Kniha9=new Kniha ("Kniha", "Autor");
+		Kniha Kniha10 = new Kniha ("Kniha", "Autor");
+		Kniha Kniha11=new Kniha ("Kniha", "Autor");
+		Kniha Kniha12=new Kniha ("Kniha", "Autor");
+		System.out.println(Kniha1);
+		System.out.println(Kniha2);
+		System.out.println(Kniha3);
+		System.out.println(Kniha4);
+		System.out.println(Kniha5);
+		System.out.println(Kniha6);
+		System.out.println(Kniha7);
+		System.out.println(Kniha8);
+		System.out.println(Kniha9);
+		System.out.println(Kniha10);
+		System.out.println(Kniha11);
+		System.out.println(Kniha12);	
+	}
+}

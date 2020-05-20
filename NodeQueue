@@ -1,0 +1,95 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Queue q = new Queue();
+		Stack s = new Stack();
+		s.push("HELLO");
+		s.push("Ahoj");
+		s.push("Povyk");
+		s.push("yos");
+		q.push("klavesnice");
+		q.push("myš");
+		q.push("monitor");
+		q.push("počítač");
+		System.out.println(s.pop());
+		System.out.println(s.pop());
+		System.out.println(q.pop());
+		System.out.println(q.pop());
+		Scanner sc = new Scanner(System.in);
+		String command;
+		do {	System.out.println("Zadej příkaz: ");
+			command = sc.nextLine();
+			if (command=="chleba") {
+				q.push("chleba");
+			}
+			if (command=="snístboty") {
+				s.push("Sníst boty");
+			}
+
+		} while (!command.equalsIgnoreCase("KONEC"));
+		System.out.println("Systém byl ukončen");
+	}
+}
+
+public class Node<T> {
+	private T value;
+	private Node<T> next = null;
+	public Node(T t) {
+		this.value = t;
+	}
+	public T getValue() {
+		return value;
+	}
+	public void setValue(T value) {
+		this.value = value;
+	}
+	public Node<T> getNext() {
+		return next;
+	}
+	public void setNext(Node<T> next) {
+		this.next = next;
+	}
+}
+
+public class Queue<T> {
+	Node<T> head;
+	public void push(T t) {
+		Node<T> nhead = new Node<T>(t);
+		nhead.setNext(head);
+		head = nhead;
+	}
+	public T pop() {
+		if (head == null)
+			return null;
+		Node<T> last = head;// nalezenĂ­ poslednĂ­ho prvku
+		while (last.getNext() != null)
+			last = last.getNext();
+		Node<T> beforeLast = head;// nalezenĂ­ pĹ™edposlednĂ­ho prvku
+		if (last != head) {
+			while (beforeLast.getNext() != last)
+				beforeLast = beforeLast.getNext();
+		}
+		beforeLast.setNext(null);// smaĹľ napojenĂ­ pĹ™edposlednĂ­ho prvku na poslednĂ­
+		return last.getValue();
+	}
+}
+
+public class Stack<T> {
+	Node<T> head;
+	public void push(T t) {
+		if (head == null) {
+			head = new Node<T>(t);
+		} else {
+			Node<T> nhead = new Node<T>(t);
+			nhead.setNext(head);
+			head = nhead;
+		}
+	}
+	public T pop(){
+		T tmp = head.getValue();
+		head = head.getNext();
+		return tmp;
+	}
+}

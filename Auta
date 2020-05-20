@@ -1,0 +1,14 @@
+
+public class Auta {
+	String auta; 
+	int rychlost;
+	
+	Auta(String c,int s) {
+	this.auta=c;
+	this.rychlost=s;
+	}
+}
+public class Druhy {
+	public static void main(String[] args) {
+	}
+}

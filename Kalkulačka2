@@ -1,0 +1,82 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner (System.in);
+		System.out.println("První číslo");
+		int prvni = sc.nextInt();
+		System.out.println("Druhé číslo");
+		int druhy = sc.nextInt();
+		int soucet=0;
+		int odecet=0;
+		int nasobeni=0;
+		int deleni=0;
+		boolean jone;
+		int help2=0;
+		int help3=0;
+		int help4=0;
+		int help5=0;
+		int help6=0;
+		int help7=0;
+		soucet = prvni + druhy;
+		odecet = prvni - druhy;
+		nasobeni = prvni * druhy;
+		deleni = prvni/druhy;
+		System.out.println("Chceš: součet, odečíst, vynásobit, vydělit?");
+		String chci = sc.nextLine();
+		if (chci=="součet") {
+			System.out.println(soucet);
+		}
+		if (chci=="odečíst") {
+			System.out.println(odecet);
+			
+		}
+		if (chci=="vynásobit") {
+			System.out.println(nasobeni);
+		}
+		if (chci=="vydělit") {
+			System.out.println(deleni);
+		}
+		int neco=0;
+		int neco2=0;
+		int help=0;
+		String pozadavek = sc.nextLine();
+		if (pozadavek=="vyměnit") {
+			help=neco;
+			neco=neco2;
+			neco2=help;
+		}
+		if (soucet>20) {
+			jone=true;
+		}
+		else {
+			jone=false;
+		}
+		if (odecet>20) {
+			jone=true;
+		}
+		else {
+			jone=false;
+		}
+		if (nasobeni>20) {
+			jone=true;
+		}
+		else {
+			jone=false;
+		}
+		if (deleni>20) {
+			jone=true;
+		}
+		else {
+			jone=false;
+		}
+		System.out.println("Číslo je větší než 20: " + jone);
+		help2 = soucet - odecet;
+		help3 = nasobeni - deleni;
+		help4 = nasobeni - soucet;
+		help5 = nasobeni - odecet;
+		help6 = deleni - soucet;
+		help7 = deleni - odecet;
+	}
+}
